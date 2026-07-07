@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>คณิตคิดไว AR: จำนวนเต็ม ม.1</title>
+  <title>คอมพิวเตอร์คิดสนุก AR: ฮาร์ดแวร์ vs ซอฟต์แวร์ ม.1</title>
   
   <!-- CSS & Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -52,16 +52,16 @@
     }
     /* ปรับขนาดตัวอักษร responsive ด้วย clamp */
     .responsive-title {
-      font-size: clamp(2rem, 5vw, 4rem);
+      font-size: clamp(1.8rem, 4.5vw, 3.8rem);
     }
     .responsive-question {
-      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
     }
     .responsive-option {
-      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-size: clamp(2rem, 5vw, 4.5rem);
     }
     .responsive-hud {
-      font-size: clamp(1rem, 2.5vw, 1.75rem);
+      font-size: clamp(0.9rem, 2.2vw, 1.5rem);
     }
     /* กล้องและหน้าจอ AR */
     #webcam-container {
@@ -91,7 +91,7 @@
     }
   </style>
 </head>
-<body class="bg-gradient-to-tr from-sky-100 via-purple-50 to-pink-100 min-h-screen text-slate-800 flex flex-col justify-between">
+<body class="bg-gradient-to-tr from-indigo-100 via-purple-50 to-pink-100 min-h-screen text-slate-800 flex flex-col justify-between">
 
   <!-- ตัวระบุสเตตัสโมเดลด้านบนสุด -->
   <header class="p-3 bg-white/60 backdrop-blur-md shadow-sm border-b border-white/40 flex justify-between items-center z-50">
@@ -112,27 +112,27 @@
       
       <!-- โลโก้ & ชื่อเกม -->
       <div class="mb-4 bg-gradient-to-r from-pastelBlueDark via-pastelLavenderDark to-pastelPinkDark bg-clip-text text-transparent font-extrabold responsive-title leading-tight">
-        คณิตคิดไว AR 🧮
-        <div class="text-2xl md:text-3xl font-semibold text-slate-600 mt-1">เรื่อง: การบวกและลบจำนวนเต็ม ม.1</div>
+        คอมพิวเตอร์คิดสนุก AR 💻
+        <div class="text-2xl md:text-3xl font-semibold text-slate-600 mt-1">เรื่อง: การแยกแยะ ฮาร์ดแวร์ & ซอฟต์แวร์ ม.1</div>
       </div>
 
       <!-- กล่องคำแนะนำวิธีเล่นสไตล์พาสเทลน่ารัก -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6 w-full text-left">
         <div class="bg-pastelBlue/70 p-5 rounded-2xl border border-blue-200">
-          <div class="text-pastelBlueDark font-bold text-lg mb-1"><span class="bg-pastelBlueDark text-white px-2 py-0.5 rounded-full text-sm mr-2">1</span> เตรียมพร้อม</div>
-          <p class="text-slate-600 text-sm">ยืนห่างจากกล้องประมาณ 1.5 - 2 เมตร เพื่อให้ระบบตรวจจับสัญลักษณ์มือของคุณได้อย่างชัดเจน</p>
+          <div class="text-pastelBlueDark font-bold text-lg mb-1"><span class="bg-pastelBlueDark text-white px-2 py-0.5 rounded-full text-sm mr-2">1</span> เตรียมตัว</div>
+          <p class="text-slate-600 text-sm">ยืนห่างจากกล้องประมาณ 1.5 - 2 เมตร เพื่อให้เอไอจับสัญญานมือได้อย่างแม่นยำชัดเจน</p>
         </div>
         <div class="bg-pastelLavender/70 p-5 rounded-2xl border border-purple-200">
-          <div class="text-pastelLavenderDark font-bold text-lg mb-1"><span class="bg-pastelLavenderDark text-white px-2 py-0.5 rounded-full text-sm mr-2">2</span> เลือกคำตอบ</div>
-          <p class="text-slate-600 text-sm">ยกนิ้วชี้เพื่อเลื่อนเป้ากลมพาสเทลชี้ไปยัง <span class="font-semibold text-sky-600">กล่องตัวเลือก</span> ด้านซ้ายหรือขวา</p>
+          <div class="text-pastelLavenderDark font-bold text-lg mb-1"><span class="bg-pastelLavenderDark text-white px-2 py-0.5 rounded-full text-sm mr-2">2</span> ชี้แยกแยะ</div>
+          <p class="text-slate-600 text-sm">ชี้เป้าหมายไปที่กล่อง <span class="font-bold text-sky-600">ฮาร์ดแวร์</span> หรือ <span class="font-bold text-pink-600">ซอฟต์แวร์</span> ด้านซ้ายหรือขวาตามโจทย์</p>
         </div>
         <div class="bg-pastelPink/70 p-5 rounded-2xl border border-pink-200">
-          <div class="text-pastelPinkDark font-bold text-lg mb-1"><span class="bg-pastelPinkDark text-white px-2 py-0.5 rounded-full text-sm mr-2">3</span> ล็อคเป้าหมาย</div>
-          <p class="text-slate-600 text-sm">ชี้เป้าหมายค้างไว้จนวงรอบปลายนิ้วขึ้น <span class="font-semibold text-pink-600">เต็มวงครบ 40 แต้ม</span> (ประมาณ 2 วินาที) เพื่อยืนยันการตอบ</p>
+          <div class="text-pastelPinkDark font-bold text-lg mb-1"><span class="bg-pastelPinkDark text-white px-2 py-0.5 rounded-full text-sm mr-2">3</span> ยืนยันคำตอบ</div>
+          <p class="text-slate-600 text-sm">ชี้พิกัดกล่องเป้าหมายค้างไว้จนวงเกจขึ้น <span class="font-bold text-pink-600">ครบ 40 แต้ม</span> เพื่อเป็นการส่งคำตอบตกลง</p>
         </div>
       </div>
 
-      <!-- สวนตั้งค่ากล้อง -->
+      <!-- ส่วนตั้งค่ากล้อง -->
       <div class="mb-6 flex flex-col items-center">
         <label for="camera-select" class="text-slate-600 font-semibold text-sm mb-2"><i class="fa-solid fa-video mr-1"></i> เลือกกล้องเว็บแคม:</label>
         <select id="camera-select" class="bg-slate-50 border border-slate-300 rounded-lg py-2 px-4 text-sm text-slate-700 outline-none focus:ring-2 focus:ring-pastelLavenderDark/40">
@@ -146,7 +146,7 @@
       </button>
 
       <div class="mt-4 text-xs text-slate-400 flex items-center gap-1">
-        <i class="fa-solid fa-circle-info"></i> รองรับเฉพาะ HTTPS และต้องการการอนุญาตเข้าถึงกล้องและระบบเสียง Web Audio
+        <i class="fa-solid fa-circle-info"></i> รองรับการเล่นบนทุกเบราว์เซอร์ผ่านกล้องและเสียง Web Audio
       </div>
     </div>
   </main>
@@ -154,7 +154,7 @@
   <!-- หน้าเล่นเกม (Game Screen) -->
   <main id="game-screen" class="hidden flex-grow relative overflow-hidden w-full h-full flex flex-col justify-between">
     
-    <!-- พื้นหลังกล้องเว็บแคม และ Canvas จับมือแบบเต้มจอ -->
+    <!-- พื้นหลังกล้องเว็บแคม และ Canvas จับมือแบบเต็มจอ -->
     <div class="absolute inset-0 z-0 bg-slate-900 flex justify-center items-center">
       <!-- ซ่อนวิดีโอตัวแม่และดึงมาวาดบน Canvas -->
       <video id="webcam" class="hidden" playsinline muted width="640" height="480"></video>
@@ -172,7 +172,7 @@
         </div>
         <!-- เลขข้อ -->
         <div class="flex items-center space-x-2 bg-pastelLavender px-4 py-2 rounded-xl border border-pastelLavenderDark/20 shadow-sm">
-          <span class="text-pastelLavenderDark responsive-hud font-bold"><i class="fa-solid fa-circle-question"></i> ข้อที่: <span id="hud-question-index" class="text-slate-800">1</span> / 10</span>
+          <span class="text-pastelLavenderDark responsive-hud font-bold"><i class="fa-solid fa-laptop"></i> ข้อที่: <span id="hud-question-index" class="text-slate-800">1</span> / 10</span>
         </div>
         <!-- เวลาถอยหลังเป็นสเตตัสบาร์ -->
         <div class="flex flex-col items-end w-1/3 max-w-xs">
@@ -185,11 +185,11 @@
         </div>
       </div>
 
-      <!-- โจทย์เลขตัวเบิ้มตรงกลางด้านบน -->
+      <!-- โจทย์สิ่งของคอมพิวเตอร์ตัวเบิ้มตรงกลางด้านบน -->
       <div class="w-full flex justify-center my-2">
-        <div class="bg-white/90 backdrop-blur-md rounded-3xl px-8 py-5 shadow-lg border-2 border-dashed border-pastelLavenderDark/40 text-center max-w-2xl w-full">
-          <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">จงหาผลลัพธ์ของโจทย์ข้อนี้</div>
-          <div id="game-formula" class="responsive-question font-extrabold text-slate-800 leading-tight drop-shadow-sm font-kanit"></div>
+        <div class="bg-white/90 backdrop-blur-md rounded-3xl px-8 py-5 shadow-lg border-2 border-dashed border-indigo-400 text-center max-w-2xl w-full">
+          <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">สิ่งนี้จัดอยู่ในประเภทใดในระบบคอมพิวเตอร์?</div>
+          <div id="game-formula" class="responsive-question font-extrabold text-indigo-950 leading-tight drop-shadow-sm font-kanit"></div>
         </div>
       </div>
 
@@ -197,7 +197,7 @@
       <div id="no-hand-warning" class="w-full flex justify-center my-1 transition-all duration-300 transform scale-0 h-0 overflow-hidden">
         <div class="bg-amber-100/90 border border-amber-400 text-amber-900 px-6 py-2 rounded-full shadow-md flex items-center gap-2 font-bold text-lg animate-bounce">
           <i class="fa-solid fa-hand-pointer text-amber-600 animate-pulse"></i>
-          <span>ยกมือของคุณขึ้นให้กล้องตรวจจับเพื่อเริ่มเล่นเกม!</span>
+          <span>ยกมือของคุณขึ้นให้อยู่ในมุมมองของกล้องเพื่อตรวจหา!</span>
         </div>
       </div>
 
@@ -209,7 +209,7 @@
           <div id="text-left-val" class="responsive-option font-extrabold text-sky-700 leading-none"></div>
           <!-- เกจความคืบหน้าระบุแต้มตัวอักษรเพื่อตอบรับความเข้าใจตามข้อกำหนด -->
           <div class="mt-4 text-xs font-semibold text-sky-600 bg-sky-100 px-3 py-1 rounded-full border border-sky-300 opacity-80 pointer-events-none">
-            ชี้ค้างไว้เพื่อตอบตกลง (<span id="gauge-left">0</span>/40)
+            ชี้ค้างเพื่อตอบ (<span id="gauge-left">0</span>/40)
           </div>
         </div>
 
@@ -218,14 +218,14 @@
           <div class="absolute top-4 right-4 bg-pink-500 text-white font-extrabold text-lg px-4 py-1 rounded-full shadow">ข</div>
           <div id="text-right-val" class="responsive-option font-extrabold text-pink-700 leading-none"></div>
           <div class="mt-4 text-xs font-semibold text-pink-600 bg-pink-100 px-3 py-1 rounded-full border border-pink-300 opacity-80 pointer-events-none">
-            ชี้ค้างไว้เพื่อตอบตกลง (<span id="gauge-right">0</span>/40)
+            ชี้ค้างเพื่อตอบ (<span id="gauge-right">0</span>/40)
           </div>
         </div>
       </div>
 
       <!-- แถบบอกสถานะใบ้ตัวกระตุ้น -->
       <div class="text-center bg-black/40 backdrop-blur-md rounded-xl p-2 max-w-lg mx-auto w-full text-white text-sm font-semibold border border-white/10 shadow-md">
-        💡 ระบบจำลองเมาส์อัตโนมัติ: หากไม่มีกล้อง คุณสามารถเลื่อนเมาส์ไปจี้ที่กล่องซ้ายหรือขวาเพื่อทำการเลือกแทนได้
+        💡 หากไม่มีกล้องเว็บแคม คุณสามารถเปิดโหมดทดสอบด้วยเมาส์ แล้วเอาเมาส์จี้ที่กล่องแทนได้!
       </div>
     </div>
   </main>
@@ -238,7 +238,7 @@
       <div class="text-7xl md:text-8xl mb-4 animate-bounce">🏆</div>
 
       <h2 class="text-4xl font-extrabold text-slate-800 mb-2">สรุปผลการทดสอบ</h2>
-      <p class="text-slate-600 text-lg mb-6">คุณบวกและลบจำนวนเต็มสำเร็จครบ 10 ข้อแล้ว!</p>
+      <p class="text-slate-600 text-lg mb-6">คุณได้ทำการแยกแยะประเภทฮาร์ดแวร์และซอฟต์แวร์ครบ 10 ข้อแล้ว!</p>
 
       <!-- บับเบิ้ลคะแนนใหญ่เบิ้ม -->
       <div class="bg-pastelLavender/60 border-2 border-pastelLavenderDark/30 rounded-2xl p-6 mb-6 w-full max-w-sm">
@@ -249,7 +249,7 @@
 
       <!-- บันทึกสถิติมินิ -->
       <div class="text-sm text-slate-500 mb-6">
-        <p><i class="fa-solid fa-clock"></i> ใช้เวลาและพลังแห่งการคำนวณอย่างคุ้มค่า เพื่อฝึกฝนความแม่นยำ</p>
+        <p><i class="fa-solid fa-circle-check text-pastelMintDark"></i> พัฒนาความรู้พื้นฐานวิทยาการคำนวณและเทคโนโลยี ม.1</p>
       </div>
 
       <!-- ปุ่มเล่นใหม่อีกครั้ง -->
@@ -259,15 +259,27 @@
     </div>
   </main>
 
+  <!-- แจ้งเตือนความล้มเหลวแบบดีไซน์สวยงามแทนการใช้ alert() ดั้งเดิม -->
+  <div id="custom-alert" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-all duration-300">
+    <div class="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl border-2 border-amber-300 text-center animate-bounce">
+      <div class="text-5xl text-amber-500 mb-3"><i class="fa-solid fa-triangle-exclamation"></i></div>
+      <h3 class="text-xl font-bold text-slate-800 mb-2" id="alert-title">เกิดข้อผิดพลาด</h3>
+      <p class="text-slate-600 text-sm mb-5" id="alert-message">ข้อความแจ้งเตือนความผิดพลาดที่นี่</p>
+      <button onclick="closeCustomAlert()" class="bg-amber-500 text-white font-bold py-2 px-6 rounded-full hover:bg-amber-600 transition shadow">
+        ตกลง เข้าใจแล้ว
+      </button>
+    </div>
+  </div>
+
   <!-- ฟุตเตอร์เครดิตด้านล่าง -->
   <footer class="p-3 bg-white/30 backdrop-blur-md text-center text-xs text-slate-500 border-t border-white/30 z-20">
     <div class="flex flex-col sm:flex-row justify-between items-center max-w-6xl mx-auto gap-2">
-      <p>© 2026 คณิตคิดไว AR - สื่อการสอนสร้างสรรค์วิชาคณิตศาสตร์ ม.1</p>
-      <p>พัฒนาขึ้นด้วยวิทยาศาสตร์และเอไอตรวจจับท่าทาง (MediaPipe) 💻</p>
+      <p>© 2026 คอมพิวเตอร์คิดสนุก AR - สื่อการสอนสร้างสรรค์วิทยาการคำนวณ ม.1</p>
+      <p>ขับเคลื่อนตรวจจับความเคลื่อนไหวด้วย MediaPipe Hands 💻</p>
     </div>
   </footer>
 
-  <!-- Scripts: การควบคุมการทำงานของเกมคณิตศาสตร์ AR ทั้งหมด -->
+  <!-- Scripts: การควบคุมการทำงานของเกมคอมพิวเตอร์ AR ทั้งหมด -->
   <script>
     // สัญญาณเสียงสังเคราะห์ Web Audio API ปราศจากไฟล์เสียงภายนอกเพื่อเสถียรภาพสูงสุด
     const AudioEngine = {
@@ -361,18 +373,18 @@
       }
     };
 
-    // รายการโจทย์ 10 ข้อตามกำหนดและตัวแปรที่ระบุความถูกต้อง
+    // รายการโจทย์สิ่งรอบตัวด้านวิชาคอมพิวเตอร์ (Hardware vs Software) สำหรับน้องๆ ม.1
     const questions = [
-      { q: "(-5) + 8", ans: 3, dec: -3 },
-      { q: "7 + (-12)", ans: -5, dec: 5 },
-      { q: "(-4) + (-6)", ans: -10, dec: -2 },
-      { q: "0 + (-9)", ans: -9, dec: 9 },
-      { q: "15 - 20", ans: -5, dec: 5 },
-      { q: "(-3) - 7", ans: -10, dec: -4 },
-      { q: "10 - (-5)", ans: 15, dec: 5 },
-      { q: "(-8) - (-3)", ans: -5, dec: -11 },
-      { q: "(-6) + 6", ans: 0, dec: -12 },
-      { q: "4 - 9 + (-2)", ans: -7, dec: -3 }
+      { q: "เมาส์ (Mouse)", ans: "ฮาร์ดแวร์", dec: "ซอฟต์แวร์" },
+      { q: "ระบบปฏิบัติการ Windows 11", ans: "ซอฟต์แวร์", dec: "ฮาร์ดแวร์" },
+      { q: "แป้นพิมพ์ (Keyboard)", ans: "ฮาร์ดแวร์", dec: "ซอฟต์แวร์" },
+      { q: "เว็บเบราว์เซอร์ Google Chrome", ans: "ซอฟต์แวร์", dec: "ฮาร์ดแวร์" },
+      { q: "แผงวงจรหลัก / ซีพียู (CPU)", ans: "ฮาร์ดแวร์", dec: "ซอฟต์แวร์" },
+      { q: "แอปพลิเคชัน LINE", ans: "ซอฟต์แวร์", dec: "ฮาร์ดแวร์" },
+      { q: "จอภาพคอมพิวเตอร์ (Monitor)", ans: "ฮาร์ดแวร์", dec: "ซอฟต์แวร์" },
+      { q: "ระบบปฏิบัติการ Android", ans: "ซอฟต์แวร์", dec: "ฮาร์ดแวร์" },
+      { q: "เครื่องพิมพ์พิมพ์เอกสาร (Printer)", ans: "ฮาร์ดแวร์", dec: "ซอฟต์แวร์" },
+      { q: "โปรแกรม Microsoft PowerPoint", ans: "ซอฟต์แวร์", dec: "ฮาร์ดแวร์" }
     ];
 
     // ตัวแปรควบคุมระบบเกม
@@ -409,6 +421,17 @@
       setupMouseFallbackListeners();
     };
 
+    // แสดงแจ้งเตือนแบบกำหนดเองเลี่ยงการใช้ alert
+    function showCustomAlert(title, message) {
+      document.getElementById('alert-title').innerText = title;
+      document.getElementById('alert-message').innerText = message;
+      document.getElementById('custom-alert').classList.remove('hidden');
+    }
+
+    function closeCustomAlert() {
+      document.getElementById('custom-alert').classList.add('hidden');
+    }
+
     // ค้นหากล้องที่เชื่อมต่ออยู่
     async function getAvailableCameras() {
       const select = document.getElementById('camera-select');
@@ -425,7 +448,7 @@
         videoDevices.forEach((device, index) => {
           const option = document.createElement('option');
           option.value = device.deviceId;
-          option.text = device.label || `กล้องที่ ${index + 1}`;
+          option.text = device.label || `กล้องตัวที่ ${index + 1}`;
           select.appendChild(option);
         });
       } catch (err) {
@@ -447,7 +470,7 @@
       // ปรับปรุงประสิทธิภาพเพื่อให้รันบนเครื่องเบาๆ
       handsDetector.setOptions({
         maxNumHands: 1,
-        modelComplexity: 0, // โมเดลแบบเบาสุดเพื่อความลื่นไหล
+        modelComplexity: 0, // โมเดลแบบเบาสุดเพื่อความลื่นไหลประมวลผลว่องไว
         minDetectionConfidence: 0.5,
         minTrackingConfidence: 0.5
       });
@@ -461,10 +484,10 @@
       
       startBtn.disabled = false;
       startBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-      startBtn.innerHTML = '<i class="fa-solid fa-play mr-2 animate-bounce"></i> เริ่มเล่นเกมคณิตคิดไวเลย!';
+      startBtn.innerHTML = '<i class="fa-solid fa-play mr-2 animate-bounce"></i> เริ่มเล่นเกมคัดแยกฮาร์ดแวร์ & ซอฟต์แวร์!';
     }
 
-    // ฟังก์ชันเปิด/ปิดโหมดช่วยเหลือในการทดสอบ (ใช้นิ้วชี้หรือเมาส์)
+    // ฟังก์ชันเปิด/ปิดโหมดช่วยเหลือในการทดสอบด้วยเมาส์
     function toggleFallbackMouse() {
       fallbackMouseMode = !fallbackMouseMode;
       const btnText = document.getElementById('mouse-btn-text');
@@ -482,7 +505,7 @@
         if (!fallbackMouseMode || !gameActive || isTransitioning) return;
         pointerX = e.clientX;
         pointerY = e.clientY;
-        lastHandDetectedTime = Date.now(); // อัปเดตเพื่อให้ไม่แสดงตัวเตือน
+        lastHandDetectedTime = Date.now(); // อัปเดตเพื่อไม่ให้แสดงกล่องตัวเตือน
       });
 
       gameArea.addEventListener('mouseleave', () => {
@@ -524,8 +547,8 @@
         cameraInstance.start();
       } catch (err) {
         console.error("Camera connection failed:", err);
-        // แสดงป๊อปอัปหากกล้องใช้งานไม่ได้
-        alert("ไม่สามารถเข้าถึงกล้องเว็บแคมได้ ระบบจะสลับไปที่โหมดควบคุมด้วยเมาส์ให้อัตโนมัติ เพื่อให้ผู้เล่นได้ทดลองสนุกกับเกม!");
+        // แสดงป๊อปอัปแจ้งสิทธิ์ความคืบหน้าด้วย UI สวยงาม แทน alert()
+        showCustomAlert("แจ้งสถานะระบบกล้อง", "ไม่สามารถเปิดกล้องเว็บแคมได้ชั่วคราว ระบบได้เปิดการช่วยทดสอบด้วยการลากจี้ 'เมาส์' แทนเพื่อให้ผู้เล่นสนุกกับการทดลองเล่นได้อย่างต่อเนื่องโดยไม่มีอุปสรรค!");
         fallbackMouseMode = true;
         document.getElementById('mouse-btn-text').innerText = "โหมดทดสอบด้วยเมาส์ (อัตโนมัติ)";
       }
@@ -559,7 +582,7 @@
       }
 
       isTransitioning = false;
-      secondsLeft = 120; // รีเซ็ตเวลานับถอยหลัง 2 นาทีตามข้อกำหนด
+      secondsLeft = 120; // รีเซ็ตเวลานับถอยหลัง 2 นาที (120 วินาที)
       leftHoverTicks = 0;
       rightHoverTicks = 0;
 
@@ -632,7 +655,7 @@
       }, 3000); // แสดงเฉลยค้างไว้ 3 วินาที
     }
 
-    // ฟังก์ชันพ่นสีเพื่อเฉลยว่าคำตอบข้อใดถูกหรือผิด
+    // ฟังก์ชันเฉลยว่าคำตอบข้อใดถูกหรือผิด
     function revealCorrectAnswer() {
       const boxLeft = document.getElementById('box-left');
       const boxRight = document.getElementById('box-right');
@@ -673,7 +696,7 @@
         } else {
           boxRight.className = "w-[45%] h-[40vh] bg-rose-100 rounded-3xl border-4 border-rose-500 shadow-xl flex flex-col justify-center items-center transition-all duration-300 relative transform";
         }
-        // รอแป๊บเดียวแล้วเฉลยคำตอบที่ถูกต้องให้เด็กดู
+        // รอความนุ่มนวลในการเรียนรู้แล้วเฉลยคำตอบที่ถูกต้อง
         setTimeout(() => {
           revealCorrectAnswer();
         }, 600);
@@ -686,7 +709,7 @@
       }, 2500);
     }
 
-    // แสดงสัญญาณเตือนเรื่องการตรวจหาความลึกของกล้อง
+    // แสดงสัญญาณเตือนเรื่องการตรวจหาข้อจำกัดของกล้องเว็บแคม
     let lastWarningState = false;
     function showNoHandWarning(visible) {
       if (lastWarningState === visible) return;
@@ -709,7 +732,7 @@
       const ctx = canvas.getContext('2d');
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // วาดเฟรมวิดีโอแบบกลับหลัง (Mirror) เพื่อความเป็นธรรมชาติ
+      // วาดเฟรมวิดีโอแบบกลับหลัง (Mirror) เพื่อความเป็นธรรมชาติในการส่องกระจก
       ctx.save();
       ctx.translate(canvas.width, 0);
       ctx.scale(-1, 1);
@@ -764,11 +787,11 @@
         ctx.stroke();
       });
 
-      // พ่นจุดข้อมือ
+      // พ่นจุดข้อต่อ
       landmarks.forEach((pt, index) => {
         ctx.beginPath();
         ctx.arc(pt.x * ctx.canvas.width, pt.y * ctx.canvas.height, index === 8 ? 8 : 4, 0, 2 * Math.PI);
-        ctx.fillStyle = index === 8 ? '#EC4899' : '#0EA5E9'; // จุดปลายนิ้วชี้จะเด่นขึ้น
+        ctx.fillStyle = index === 8 ? '#EC4899' : '#0EA5E9'; // จุดปลายนิ้วชี้โดดเด่นสะดุดตา
         ctx.fill();
       });
     }
@@ -820,14 +843,14 @@
         } 
         // หลุดออกนอกกรอบ
         else {
-          leftHoverTicks = Math.max(0, leftHoverTicks - 2); // ค่อยๆ ลดเกจแทนการล้างทันทีเพื่อให้ลื่นขึ้นในกรณีมือสะดุด
+          leftHoverTicks = Math.max(0, leftHoverTicks - 2); // ค่อยๆ ลดเกจแทนการล้างทันทีเพื่อให้ลื่นขึ้นเมื่อเกิดอาการสั่นไหวของมือ
           rightHoverTicks = Math.max(0, rightHoverTicks - 2);
           
           boxLeft.classList.remove('scale-105', 'bg-sky-100/90', 'border-solid');
           boxRight.classList.remove('scale-105', 'bg-pink-100/90', 'border-solid');
         }
 
-        // แสดงความรุดหน้าเป็นตัวอักษรเพื่อตอบโจทย์ผู้เล่น
+        // แสดงความรุดหน้าเป็นตัวอักษรบนหน้าต่าง UI
         document.getElementById('gauge-left').innerText = Math.round(leftHoverTicks);
         document.getElementById('gauge-right').innerText = Math.round(rightHoverTicks);
       }
@@ -838,7 +861,7 @@
       requestAnimationFrame(gameRenderLoop);
     }
 
-    // เช็กขอบเขตความน่าจะเป็นของการชน
+    // เช็กขอบเขตความน่าจะเป็นของการทับซ้อน
     function isInside(x, y, rect) {
       return x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom;
     }
@@ -891,7 +914,7 @@
       gameActive = false;
       if (timerInterval) clearInterval(timerInterval);
 
-      // ปิดกล้องเว็บแคมเพื่อประหยัดสเปกและรักษาความปลอดภัย
+      // ปิดกล้องเว็บแคมเพื่อประหยัดพลังงานประมวลผลของบราวเซอร์
       if (cameraInstance) {
         cameraInstance.stop();
       }
@@ -911,16 +934,16 @@
       // เลือกข้อความวิจารณ์ประเมินผลการเรียนรู้
       const evalText = document.getElementById('sum-evaluation');
       if (score === 10) {
-        evalText.innerText = "สุดยอดอัจฉริยะคณิตศาสตร์! เก่งที่สุดในสามโลกเลย! 👑🌟";
+        evalText.innerText = "ยอดเยี่ยมมาก! อัจฉริยะไอที แยกแยะระบบคอมพิวเตอร์ได้อย่างสมบูรณ์แบบที่สุด! 👑💻🌟";
         evalText.className = "text-xl font-bold text-emerald-600 mt-2";
       } else if (score >= 7) {
-        evalText.innerText = "ยอดเยี่ยมมาก! ทักษะการคำนวณจำนวนเต็มของคุณแข็งแกร่งมาก! 🎉👍";
+        evalText.innerText = "เยี่ยมยอดเลย! ทักษะความเข้าใจฮาร์ดแวร์และซอฟต์แวร์ของคุณแข็งแกร่งมาก! 🎉👍";
         evalText.className = "text-xl font-bold text-sky-600 mt-2";
       } else if (score >= 5) {
-        evalText.innerText = "ผ่านเกณฑ์ดีเลยทีเดียว! พยายามฝึกฝนบ่อยๆ จะเก่งขึ้นแน่นอนน้า! 🎯💪";
+        evalText.innerText = "ผ่านเกณฑ์การทดสอบได้ดี! ลองศึกษาและทบทวนความรู้เพิ่มเติมเพื่อคะแนนเต็มในรอบหน้านะครับ! 🎯💪";
         evalText.className = "text-xl font-bold text-amber-600 mt-2";
       } else {
-        evalText.innerText = "อย่ายอมแพ้นะคนเก่ง! ลองทบทวนการบวกและลบจำนวนเต็มแล้วกลับมาลุยใหม่อีกรอบนะ! 🧠✨";
+        evalText.innerText = "อย่ายอมแพ้นะครับคนเก่ง! ทบทวนเรื่องฮาร์ดแวร์-ซอฟต์แวร์แล้วกลับมาท้าทายใหม่อีกรอบนะ! 🧠✨";
         evalText.className = "text-xl font-bold text-rose-500 mt-2";
       }
     }
